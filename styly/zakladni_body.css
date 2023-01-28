@@ -1,0 +1,23 @@
+.nav-container * {
+    border: 1px dotted red;
+}
+
+.nav-container{
+    border: 1px dotted black;
+    display: flex;
+    justify-content: space-between;
+    height: 7vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+/*header nav logo*/
+.logo{
+    display: flex;
+}
+.nav-container > .logo > img{
+    width: auto;
+    height: 100%;
+}
