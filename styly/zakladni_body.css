@@ -96,8 +96,13 @@ nav a {
 #body-content{
     min-height: 86vh;
     max-width: 1440px;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    padding-left: 3vw;
+    padding-right: 3vw;
     margin: auto;
-    background-color: #005C69;
+    background-color: #C8C8C8;
+    border-radius: 2rem;
 }
 
 /*FOOTER*/
@@ -107,11 +112,11 @@ footer{
     min-height: 5vh;
     background-color: black;
     clip-path: polygon(0% 100%, 100% 100%, 100% 30%, 25% 0%, 0% 40%);
-    /*clip-path: polygon(0% 100%, 100% 100%, 100% 88%, 25% 81%, 0% 91%)*/
 }
 
 /*po zobrazení na mobilu*/
 @media only screen and (min-width: 320px) and (max-width: 480px){
+    /*HEADER*/
     .nav-container{
         padding-left: 1vw;
         padding-right: 1vw;
@@ -126,4 +131,9 @@ footer{
         flex-direction: column;
         font-size: .8rem;
     }
+    /*SECTION*/
+    #body-content{
+        border-radius: 1.3rem;
+    }
+    /*FOOTER*/
 }
