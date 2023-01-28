@@ -11,13 +11,15 @@ body{
 
 /*HEADER*/
     /*Nav*/
+
+header{
+    margin-bottom: 1vh;
+}
 header nav {
     background-color: #023618;
 }
-
 .nav-container{
     margin: auto;
-    border: 1px dotted black;
     display: flex;
     justify-content: space-between;
     height: 7vh;
@@ -88,6 +90,24 @@ nav a {
 }
 .prihlaseni a:hover{
     border-bottom: 1.5px solid white;
+}
+
+/*SECTION*/
+#body-content{
+    min-height: 86vh;
+    max-width: 1440px;
+    margin: auto;
+    background-color: #005C69;
+}
+
+/*FOOTER*/
+footer{
+    margin-top: 1vh;
+    width: 100%;
+    min-height: 5vh;
+    background-color: black;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 30%, 25% 0%, 0% 40%);
+    /*clip-path: polygon(0% 100%, 100% 100%, 100% 88%, 25% 81%, 0% 91%)*/
 }
 
 /*po zobrazení na mobilu*/
