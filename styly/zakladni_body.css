@@ -13,11 +13,26 @@
     padding-right: 5vw;
 }
 
+nav a {
+    text-decoration: none;
+}
+
 /*header nav logo*/
 .logo{
     display: flex;
 }
 .nav-container > .logo > img{
     width: auto;
+    height: 100%;
+}
+
+/*header nav navigace*/
+.navigace{
+    display: flex;
+    list-style: none;
+    align-self: center;
+    align-items: center;
+    gap: 1vw;
+    padding-left: 0;
     height: 100%;
 }
