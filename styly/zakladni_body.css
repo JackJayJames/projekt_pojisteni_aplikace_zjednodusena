@@ -20,6 +20,11 @@ nav a {
 /*header nav logo*/
 .logo{
     display: flex;
+    gap: .5vw;
+    width: max-content;
+}
+.logo h3 {
+    line-height: 100%;
 }
 .nav-container > .logo > img{
     width: auto;
@@ -35,4 +40,11 @@ nav a {
     gap: 1vw;
     padding-left: 0;
     height: 100%;
+}
+
+/*header nav prihlaseni*/
+.prihlaseni{
+    display: flex;
+    align-items: center;
+    gap: .5vw;
 }
