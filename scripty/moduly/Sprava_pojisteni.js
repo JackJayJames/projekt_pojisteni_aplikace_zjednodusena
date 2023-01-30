@@ -6,7 +6,7 @@ const privatni = new WeakMap();
 export class Sprava_pojisteni {
     constructor(){
         privatni.set(this, {
-            _seznam_pojistencu: [],
+            _seznam_pojistencu: localStorage.getItem("pojistenci") ? localStorage.getItem("pojistenci") : [],
             validace: new Validace(),
 
             _vypis_pojistencu: document.querySelector("#cont_pojistenci"),
@@ -46,22 +46,18 @@ export class Sprava_pojisteni {
                 const val_telefon = this.validace.telefon(this._form_phone.value);
                 
                 if(val_jmeno){
-                    console.log("Jmeno " + val_jmeno);
                     this._vypsat_validaci(this._val_jmeno, val_jmeno);
                     validni = false;
                 }
                 if(val_prijmeni){
-                    console.log("Příjmení " + val_prijmeni);
                     this._vypsat_validaci(this._val_prijmeni, val_prijmeni);
                     validni = false;
                 }
                 if(val_vek){
-                    console.log("Věk " + val_vek);
                     this._vypsat_validaci(this._val_vek, val_vek);
                     validni = false;
                 }
                 if(val_telefon){
-                    console.log("Telefon " + val_telefon);
                     this._vypsat_validaci(this._val_telefon, val_telefon);
                     validni = false;
                 }
