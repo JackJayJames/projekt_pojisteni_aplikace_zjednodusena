@@ -34,10 +34,15 @@ export class Vypsani{
         const radek = document.createElement("tr");
         
         radek.appendChild(this._ziskatBunku("td", `${pojistenec["jmeno"]} ${pojistenec["prijmeni"]}`));
-        radek.appendChild(this._ziskatBunku("td", pojistenec["vek"]));
+        radek.appendChild(this._ziskatBunku("td", this._ziskatVek(pojistenec["vek"])));
         radek.appendChild(this._ziskatBunku("td", pojistenec["telefon"]));
 
         return radek;
+    }
+    _ziskatVek(narozeni){
+        let datum_narozeni = new Date(narozeni).getTime();
+        let datum = new Date().getTime();
+        console.log(new Date(datum - datum_narozeni).getFullYear() - 1970);
     }
     _ziskatBunku(elem, text){
         const bunka = document.createElement(elem);

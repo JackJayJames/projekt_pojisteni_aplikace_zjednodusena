@@ -35,6 +35,7 @@ export class Sprava_pojisteni {
                     if(!this._zvalidovat()) return;
 
                     this._vytvoritPojistence();
+                    this._output.vykreslitTabulku(this._vypis_pojistencu, this._seznam_pojistencu);
                 };
             },
             _vytvoritPojistence: function(){
