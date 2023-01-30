@@ -1,16 +1,23 @@
 'use strict';
 
 export class Validace{
-    jmeno(){
-        console.log("jmeno");
+    jmeno(text){
+        if(this.neniPrazdne(text))  return "Toto pole je poviné";
     }
     prijmeni(){
-        console.log("prijmeni");
+        
     }
     vek(){
-        console.log("vek");
+        
     }
     telefon(){
-        console.log("telefon");
+        
+    }
+
+    neniPrazdne(vstup){
+        if(vstup)
+            return false;
+        else
+            return true;
     }
 }

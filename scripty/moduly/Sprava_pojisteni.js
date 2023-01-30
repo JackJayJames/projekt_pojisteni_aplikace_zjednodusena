@@ -22,11 +22,18 @@ export class Sprava_pojisteni {
                 };
             },
             _zvalidovat: function(){
-                this.validace.jmeno();
+                let validni = true;
+
+                const jmeno = this.validace.jmeno(this._form_jmeno.value);
+                if(jmeno){
+                    console.log("Jmeno " + jmeno);
+                    validni = false;
+                }
+                
                 this.validace.prijmeni();
                 this.validace.vek();
                 this.validace.telefon();
-                return false;
+                return validni;
             },
         });
         this.spustit();
