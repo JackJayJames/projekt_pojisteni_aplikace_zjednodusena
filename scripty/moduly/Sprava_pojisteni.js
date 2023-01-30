@@ -24,9 +24,9 @@ export class Sprava_pojisteni {
             _zvalidovat: function(){
                 let validni = true;
 
-                const jmeno = this.validace.jmeno(this._form_jmeno.value);
-                if(jmeno){
-                    console.log("Jmeno " + jmeno);
+                const val_jmeno = this.validace.jmeno(this._form_jmeno.value);
+                if(val_jmeno){
+                    console.log("Jmeno " + val_jmeno);
                     validni = false;
                 }
                 
