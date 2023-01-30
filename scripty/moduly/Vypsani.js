@@ -19,6 +19,9 @@ export class Vypsani{
         hlavicka.appendChild(radek);
 
         radek.appendChild(this._ziskatBunku("th", "Jmeno"));
+        radek.appendChild(this._ziskatBunku("th", "Příjmení"));
+        radek.appendChild(this._ziskatBunku("th", "Věk"));
+        radek.appendChild(this._ziskatBunku("th", "Telefon"));
 
         return hlavicka;
     }
