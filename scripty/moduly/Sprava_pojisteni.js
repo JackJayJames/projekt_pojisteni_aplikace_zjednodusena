@@ -22,7 +22,10 @@ export class Sprava_pojisteni {
                 };
             },
             _zvalidovat: function(){
-                console.log(this);
+                this.validace.jmeno();
+                this.validace.prijmeni();
+                this.validace.vek();
+                this.validace.telefon();
                 return false;
             },
         });
