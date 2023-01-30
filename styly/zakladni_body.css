@@ -106,7 +106,7 @@ nav a {
     padding-left: 3vw;
     padding-right: 3vw;
     margin: auto;
-    background-color: #C8C8C8;
+    background-color: #e8e6e6;
     border-radius: 2rem;
 }
 
@@ -118,15 +118,38 @@ nav a {
 .form-group{
     display: flex;
     flex-direction: column;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-bottom: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 2%;
     width: 50%;
 }
+
+.form-group .nazev{
+    margin-bottom: 7px;
+}
+
 .form-group input{
-    border: .1rem solid #023618;
-    height: 5vh;
+    border: .1rem solid #ccc;
+    height: 6vh;
+    font-size: 100%;
     border-radius: 5px;
+    padding-left: 1rem;
+}
+
+#btn-ulozit{
+    align-self: center;
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color: #1a8b1d;
+    color: white;
+}
+#btn-ulozit:hover{
+    cursor: pointer;
+    filter: opacity(80%);
+}
+#btn-ulozit:active{
+    filter: grayscale(50%)
 }
 
 /*FOOTER*/
@@ -158,6 +181,13 @@ footer{
     /*SECTION*/
     #body-content{
         border-radius: 1.3rem;
+    }
+    .formular{
+        flex-direction: column;
+    }
+    .form-group{
+        width: 100%;
+        padding-top: 1.5vh;
     }
     /*FOOTER*/
 }
