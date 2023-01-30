@@ -110,6 +110,25 @@ nav a {
     border-radius: 2rem;
 }
 
+.formular{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+    width: 50%;
+}
+.form-group input{
+    border: .1rem solid #023618;
+    height: 5vh;
+    border-radius: 5px;
+}
+
 /*FOOTER*/
 footer{
     margin-top: 1vh;
