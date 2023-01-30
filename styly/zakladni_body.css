@@ -47,6 +47,8 @@ nav a {
     line-height: 100%;
     font-size: 100%;
     text-align: center;
+    align-self: center;
+    margin: 0;
     font-size: 1.2rem;
     color: var(--nav-text-color);
 }
