@@ -27,6 +27,8 @@ export class Sprava_pojisteni {
                 const val_jmeno = this.validace.jmeno(this._form_jmeno.value);
                 const val_prijmeni = this.validace.jmeno(this._form_prijmeni.value);
                 const val_vek = this.validace.vek(this._form_vek.value);
+                const val_telefon = this.validace.telefon(this._form_phone.value);
+                
                 if(val_jmeno){
                     console.log("Jmeno " + val_jmeno);
                     validni = false;
@@ -39,8 +41,10 @@ export class Sprava_pojisteni {
                     console.log("Věk " + val_vek);
                     validni = false;
                 }
-                
-                this.validace.telefon();
+                if(val_telefon){
+                    console.log("Telefon " + val_telefon);
+                    validni = false;
+                }
                 return validni;
             },
         });
