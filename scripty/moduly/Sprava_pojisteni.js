@@ -9,7 +9,7 @@ export class Sprava_pojisteni {
         privatni.set(this, {
             _seznam_pojistencu: localStorage.getItem("pojistenci") ? localStorage.getItem("pojistenci") : [],
             validace: new Validace(),
-            vypsatPojistence: new Vypsani(),
+            _output: new Vypsani(),
 
             _vypis_pojistencu: document.querySelector("#cont_pojistenci"),
 
@@ -28,6 +28,7 @@ export class Sprava_pojisteni {
             _form_btn: document.querySelector("#btn-ulozit"),
 
             _spustit: function(){
+                this._output.vykreslitTabulku(this._vypis_pojistencu, this._seznam_pojistencu);
                 this._form_btn.onclick = () => {
                     this._smazatValidace();
                     if(!this._zvalidovat()) return;
