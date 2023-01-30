@@ -3,7 +3,8 @@
 export class Validace{
     jmeno(text){
         if(this._neniPrazdne(text))  return "Toto pole je poviné";
-        if(this._nemaSpravnouDelku(text, 2, 20)) return "Invalidní vstup";
+        if(this._nemaSpravnouDelku(text, 2, 20)) return "Vstup musí bát delší 1 písmeno a kratší 21 písmen";
+        if(this._obsahujeCisla(text)) return "Vstup nesmí obsahovat čísla";
     }
     prijmeni(){
         
@@ -26,5 +27,8 @@ export class Validace{
             return false;
         else
             return true;
+    }
+    _obsahujeCisla(str){
+        return /[0-9]/.test(str);
     }
 }
