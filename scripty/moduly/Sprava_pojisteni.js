@@ -10,6 +10,7 @@ export class Sprava_pojisteni {
             validace: new Validace(),
 
             _vypis_pojistencu: document.querySelector("#cont_pojistenci"),
+
             _form_jmeno: document.querySelector("#input-jmeno"),
             _val_jmeno: document.querySelector("#val-jmeno"),
 
@@ -21,13 +22,20 @@ export class Sprava_pojisteni {
 
             _form_phone: document.querySelector("#input-telefon"),
             _val_telefon: document.querySelector("#val-telefon"),
+
             _form_btn: document.querySelector("#btn-ulozit"),
 
             _spustit: function(){
                 this._form_btn.onclick = () => {
                     this._smazatValidace();
-                    if(!this._zvalidovat())    console.log("Špatný input");
+                    if(!this._zvalidovat()) return;
+
+                    this._vytvoritPojistence();
                 };
+            },
+            _vytvoritPojistence: function(){
+                const pojistenec = new Pojistenec(this._form_jmeno.value, this._form_prijmeni.value, this._form_vek.value, this._form_phone.value);
+                console.log(pojistenec);
             },
             _zvalidovat: function(){
                 let validni = true;
