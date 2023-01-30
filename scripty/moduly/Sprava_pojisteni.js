@@ -19,7 +19,10 @@ export class Sprava_pojisteni {
     }
     _sputit(){
         this.form_btn.onclick = () => {
-            if(!this.zvalidovat)    console.log("Správný input");
+            if(!this._zvalidovat)    console.log("Správný input");
         };
+    }
+    _zvalidovat(){
+        
     }
 }
