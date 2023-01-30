@@ -7,11 +7,9 @@ export class Validace{
         if(this._obsahujeCisla(text)) return "Vstup nesmí obsahovat čísla";
         if(this._jeJenomJednoSlovo(text)) return "Vstup musí být jedno slovo";
     }
-    prijmeni(){
-        
-    }
-    vek(){
-        
+    vek(cislo){
+        if(this._neniPrazdne(cislo))  return "Toto pole je poviné";
+        if(this._neniJenomCislo(cislo)) return "Vstup není číslo";
     }
     telefon(){
         
@@ -24,10 +22,7 @@ export class Validace{
             return true;
     }
     _nemaSpravnouDelku(vstup, min, max){
-        if((min <= vstup.length) && (vstup.length <= max))
-            return false;
-        else
-            return true;
+        return !((min <= vstup.length) && (vstup.length <= max));
     }
     _obsahujeCisla(str){
         return /[0-9]/.test(str);
@@ -38,5 +33,8 @@ export class Validace{
             return true;
         else
             return false;
+    }
+    _neniJenomCislo(cislo){
+        return isNaN(cislo);
     }
 }

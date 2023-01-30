@@ -25,13 +25,21 @@ export class Sprava_pojisteni {
                 let validni = true;
 
                 const val_jmeno = this.validace.jmeno(this._form_jmeno.value);
+                const val_prijmeni = this.validace.jmeno(this._form_prijmeni.value);
+                const val_vek = this.validace.vek(this._form_vek.value);
                 if(val_jmeno){
                     console.log("Jmeno " + val_jmeno);
                     validni = false;
                 }
+                if(val_prijmeni){
+                    console.log("Příjmení " + val_prijmeni);
+                    validni = false;
+                }
+                if(val_vek){
+                    console.log("Věk " + val_vek);
+                    validni = false;
+                }
                 
-                this.validace.prijmeni();
-                this.validace.vek();
                 this.validace.telefon();
                 return validni;
             },
