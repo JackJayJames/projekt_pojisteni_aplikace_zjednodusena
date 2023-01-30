@@ -10,6 +10,7 @@ export class Validace{
     vek(cislo){
         if(this._neniPrazdne(cislo))  return "Toto pole je poviné";
         if(this._neniJenomCislo(cislo)) return "Vstup není číslo";
+        if(this._spavnaVelikostCisla(cislo)) return "Invalidní velikost věku";
     }
     telefon(){
         
@@ -36,5 +37,8 @@ export class Validace{
     }
     _neniJenomCislo(cislo){
         return isNaN(cislo);
+    }
+    _spavnaVelikostCisla(cislo){
+        return !((cislo >= 0)&&(cislo < 100));
     }
 }
