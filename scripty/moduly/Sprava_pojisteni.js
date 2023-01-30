@@ -7,8 +7,8 @@ const privatni = new WeakMap();
 export class Sprava_pojisteni {
     constructor(){
         privatni.set(this, {
-            _seznam_pojistencu: localStorage.getItem("pojistenci") ? localStorage.getItem("pojistenci") : [],
-            validace: new Validace(),
+            _seznam_pojistencu: localStorage.getItem("pojistenci") ? JSON.parse(localStorage.getItem("pojistenci")) : [],
+            _validace: new Validace(),
             _output: new Vypsani(),
 
             _vypis_pojistencu: document.querySelector("#cont_pojistenci"),
@@ -29,6 +29,7 @@ export class Sprava_pojisteni {
 
             _spustit: function(){
                 this._output.vykreslitTabulku(this._vypis_pojistencu, this._seznam_pojistencu);
+                console.log(this._seznam_pojistencu);
                 this._form_btn.onclick = () => {
                     this._smazatValidace();
                     if(!this._zvalidovat()) return;
@@ -39,17 +40,19 @@ export class Sprava_pojisteni {
             _vytvoritPojistence: function(){
                 const pojistenec = new Pojistenec(this._form_jmeno.value, this._form_prijmeni.value, this._form_vek.value, this._form_phone.value);
                 this._ulozitPojistence(pojistenec);
+                console.log(this._seznam_pojistencu);
             },
-            _ulozitPojistence(pojistenec){
-                this._seznam_pojistencu.push(JSON.stringify(pojistenec));
+            _ulozitPojistence: function(pojistenec){
+                this._seznam_pojistencu.push(pojistenec);
+                localStorage.setItem("pojistenci", JSON.stringify(this._seznam_pojistencu));
             },
             _zvalidovat: function(){
                 let validni = true;
 
-                const val_jmeno = this.validace.jmeno(this._form_jmeno.value);
-                const val_prijmeni = this.validace.jmeno(this._form_prijmeni.value);
-                const val_vek = this.validace.vek(this._form_vek.value);
-                const val_telefon = this.validace.telefon(this._form_phone.value);
+                const val_jmeno = this._validace.jmeno(this._form_jmeno.value);
+                const val_prijmeni = this._validace.jmeno(this._form_prijmeni.value);
+                const val_vek = this._validace.vek(this._form_vek.value);
+                const val_telefon = this._validace.telefon(this._form_phone.value);
                 
                 if(val_jmeno){
                     this._vypsat_validaci(this._val_jmeno, val_jmeno);
