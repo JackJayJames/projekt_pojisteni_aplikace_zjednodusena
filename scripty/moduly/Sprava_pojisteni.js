@@ -15,11 +15,11 @@ export class Sprava_pojisteni {
         this.form_phone = document.querySelector("#input-telefon");
         this.form_btn = document.querySelector("#btn-ulozit");
 
-        this.sputit();
+        this._sputit();
     }
-    sputit(){
+    _sputit(){
         this.form_btn.onclick = () => {
-            
+            if(!this.zvalidovat)    console.log("Správný input");
         };
     }
 }
