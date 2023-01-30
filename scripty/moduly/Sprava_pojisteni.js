@@ -25,6 +25,7 @@ export class Sprava_pojisteni {
 
             _spustit: function(){
                 this._form_btn.onclick = () => {
+                    this._smazatValidace();
                     if(!this._zvalidovat())    console.log("Špatný input");
                 };
             },
@@ -60,6 +61,12 @@ export class Sprava_pojisteni {
             },
             _vypsat_validaci: function(element, text){
                 element.textContent = text;
+            },
+            _smazatValidace: function(){
+                this._val_jmeno.textContent = "";
+                this._val_prijmeni.textContent = "";
+                this._val_vek.textContent = "";
+                this._val_telefon.textContent = "";
             }
         });
         this.spustit();
