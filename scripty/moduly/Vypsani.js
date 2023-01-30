@@ -42,7 +42,7 @@ export class Vypsani{
     _ziskatVek(narozeni){
         let datum_narozeni = new Date(narozeni).getTime();
         let datum = new Date().getTime();
-        console.log(new Date(datum - datum_narozeni).getFullYear() - 1970);
+        return (new Date(datum - datum_narozeni).getFullYear() - 1970);
     }
     _ziskatBunku(elem, text){
         const bunka = document.createElement(elem);
