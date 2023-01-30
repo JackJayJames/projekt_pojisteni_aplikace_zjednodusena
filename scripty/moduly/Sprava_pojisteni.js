@@ -3,6 +3,10 @@
 const privatni = new WeakMap();
 export class Sprava_pojisteni {
     constructor(){
+        privatni.set(this, {
+            _seznam_pojistencu: [],
+        });
+
         this.vypis_pojistencu = document.querySelector("#cont_pojistenci");
         this.form_jmeno = document.querySelector("#input-jmeno");
         this.form_prijmeni = document.querySelector("#input-prijmeni");
