@@ -156,6 +156,10 @@ nav a {
 #btn-ulozit:active{
     filter: grayscale(50%)
 }
+#cont_pojistenci *{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 
 
 /*FOOTER*/
