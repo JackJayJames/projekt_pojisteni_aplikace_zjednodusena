@@ -14,5 +14,12 @@ export class Sprava_pojisteni {
         this.form_vek = document.querySelector("#input-vek");
         this.form_phone = document.querySelector("#input-telefon");
         this.form_btn = document.querySelector("#btn-ulozit");
+
+        this.sputit();
+    }
+    sputit(){
+        this.form_btn.onclick = () => {
+            
+        };
     }
 }
