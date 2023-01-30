@@ -1,4 +1,5 @@
 'use strict';
+import { Pojistenec } from "./Pojistenec.js";
 
 const privatni = new WeakMap();
 export class Sprava_pojisteni {
