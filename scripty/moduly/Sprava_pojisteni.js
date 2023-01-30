@@ -9,6 +9,7 @@ export class Sprava_pojisteni {
         privatni.set(this, {
             _seznam_pojistencu: localStorage.getItem("pojistenci") ? localStorage.getItem("pojistenci") : [],
             validace: new Validace(),
+            vypsatPojistence: new Vypsani(),
 
             _vypis_pojistencu: document.querySelector("#cont_pojistenci"),
 
