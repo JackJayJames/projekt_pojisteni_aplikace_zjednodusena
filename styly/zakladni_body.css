@@ -136,6 +136,10 @@ nav a {
     border-radius: 5px;
     padding-left: 1rem;
 }
+.form-group span{
+    margin-left: 5px;
+    color: red;
+}
 
 #btn-ulozit{
     align-self: center;
@@ -152,6 +156,7 @@ nav a {
 #btn-ulozit:active{
     filter: grayscale(50%)
 }
+
 
 /*FOOTER*/
 footer{
