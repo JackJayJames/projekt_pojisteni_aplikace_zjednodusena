@@ -37,7 +37,10 @@ export class Sprava_pojisteni {
             },
             _vytvoritPojistence: function(){
                 const pojistenec = new Pojistenec(this._form_jmeno.value, this._form_prijmeni.value, this._form_vek.value, this._form_phone.value);
-                console.log(pojistenec);
+                this._ulozitPojistence(pojistenec);
+            },
+            _ulozitPojistence(pojistenec){
+                this._seznam_pojistencu.push(JSON.stringify(pojistenec));
             },
             _zvalidovat: function(){
                 let validni = true;
