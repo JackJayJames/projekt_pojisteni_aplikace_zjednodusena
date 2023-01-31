@@ -109,6 +109,9 @@ nav a {
     background-color: #e8e6e6;
     border-radius: 2rem;
 }
+#body-content h2{
+    text-align: center;
+}
 
 .formular{
     margin: auto;
@@ -159,6 +162,16 @@ nav a {
 #cont_pojistenci *{
     border: 1px solid black;
     border-collapse: collapse;
+}
+#cont_pojistenci table{
+    width: 100%;
+    margin: auto;
+    max-width: 700px;
+    background-color: white;
+}
+#cont_pojistenci table tr *{
+    padding: 7px;
+    font-size: 100%;
 }
 
 
