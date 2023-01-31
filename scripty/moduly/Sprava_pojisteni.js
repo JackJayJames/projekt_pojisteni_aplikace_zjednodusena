@@ -28,8 +28,11 @@ export class Sprava_pojisteni {
             _form_btn: document.querySelector("#btn-ulozit"),
 
             _spustit: function(){
+                /**
+                 * Zavolá metodu modulu, a vykreslí tabulku
+                 * Přidá tlačítku onclick()
+                 */
                 this._output.vykreslitTabulku(this._vypis_pojistencu, this._seznam_pojistencu);
-                console.log(this._seznam_pojistencu);
                 this._form_btn.onclick = () => {
                     this._smazatValidace();
                     if(!this._zvalidovat()) return;
@@ -39,15 +42,25 @@ export class Sprava_pojisteni {
                 };
             },
             _vytvoritPojistence: function(){
+                /**
+                 * Vytvoří pojištěnce přes třídu modulu Pojistenec.js
+                 * zavolá metodu pro uložení pojistěnce do paměti
+                 */
                 const pojistenec = new Pojistenec(this._form_jmeno.value, this._form_prijmeni.value, this._form_vek.value, this._form_phone.value);
                 this._ulozitPojistence(pojistenec);
-                console.log(this._seznam_pojistencu);
             },
             _ulozitPojistence: function(pojistenec){
+                /**
+                 * Uloží pojistence ve formátu JSON do paměti localStarage
+                 */
                 this._seznam_pojistencu.push(pojistenec);
                 localStorage.setItem("pojistenci", JSON.stringify(this._seznam_pojistencu));
             },
             _zvalidovat: function(){
+                /**
+                 * Zvaliduje vstupy formuláře přes metody modulu Validace.js
+                 * Následně zavolá metodu pro výpis chybné validace, příslušnému elementu
+                 */
                 let validni = true;
 
                 const val_jmeno = this._validace.jmeno(this._form_jmeno.value);
@@ -74,9 +87,15 @@ export class Sprava_pojisteni {
                 return validni;
             },
             _vypsat_validaci: function(element, text){
+                /**
+                 * Vypíše výsledek validace, příslušnému elementu
+                 */
                 element.textContent = text;
             },
             _smazatValidace: function(){
+                /**
+                 * Smaže všechny výsledky validace, které jsou zobrazeny ve formuláři
+                 */
                 this._val_jmeno.textContent = "";
                 this._val_prijmeni.textContent = "";
                 this._val_vek.textContent = "";
@@ -84,16 +103,11 @@ export class Sprava_pojisteni {
             }
         });
         this.spustit();
-
-        /*
-        this.vypis_pojistencu = document.querySelector("#cont_pojistenci");
-        this.form_jmeno = document.querySelector("#input-jmeno");
-        this.form_prijmeni = document.querySelector("#input-prijmeni");
-        this.form_vek = document.querySelector("#input-vek");
-        this.form_phone = document.querySelector("#input-telefon");
-        this.form_btn = document.querySelector("#btn-ulozit");*/
     }
     spustit(){
+        /**
+         * Tato metoda spustí aplikaci, tím že zavolá privátní metodu _spustit()
+         */
         privatni.get(this)._spustit();
     }
 }

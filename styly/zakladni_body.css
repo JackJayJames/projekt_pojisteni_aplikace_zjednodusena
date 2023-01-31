@@ -111,6 +111,7 @@ nav a {
 }
 #body-content h2{
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .formular{
@@ -138,6 +139,7 @@ nav a {
     font-size: 100%;
     border-radius: 5px;
     padding-left: 1rem;
+    padding-right: 1rem;
 }
 .form-group span{
     margin-left: 5px;
@@ -159,6 +161,9 @@ nav a {
 #btn-ulozit:active{
     filter: grayscale(50%)
 }
+#cont_pojistenci{
+    margin-bottom: 50px;
+}
 #cont_pojistenci *{
     border: 1px solid black;
     border-collapse: collapse;
@@ -171,6 +176,10 @@ nav a {
 }
 #cont_pojistenci table tr *{
     padding: 7px;
+    font-size: 100%;
+    text-align: center;
+}
+#input-vek{
     font-size: 100%;
 }
 
